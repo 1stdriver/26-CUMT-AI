@@ -320,5 +320,36 @@ for i in range(n - 1):
     sum += int(string)
 print(sum)'''
 
-''' OJ 18'''
+''' OJ 18
+T = int(input())
+for i in range(T):
+    m, n = map(int, input().split())
+    for j in range(m, n + 1):
+        for k in range(j):
+            print(j, end = '')
+        print()'''
 
+''' OJ 19
+n = int(input())
+line = 2 * n - 1
+for i in range(1, 2 * n):
+    if i < 6:
+        stars = 2 * i - 1
+        for j in range(line - stars // 2):
+            print(' ', end = '')
+        for j in range(stars):
+            print('*', end = '')
+        for j in range(line - stars // 2):
+            print(' ', end = '')
+        print()
+    else:
+        stars = line - (i - n) * 2
+        for j in range(line - stars // 2):
+            print(' ', end = '')
+        for j in range(stars):
+            print('*', end = '')
+        for j in range(line - stars // 2):
+            print(' ', end = '')
+        print()'''
+
+''' OJ 20'''
