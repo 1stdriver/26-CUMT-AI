@@ -282,10 +282,34 @@ for i in range(p):
         psb +=1
 print(psb, maxNums)'''
 
-''' OJ 14'''
-n = int(input())
-y, m, d = input().split('-')
-days =  int(d)
-if (n < days):
-    d = str(days - n)
-    
+''' OJ 14 
+暂时不会
+'''
+
+''' OJ 15
+T = int(input())
+for i in range(T):
+    l = []
+    a, b, c = map(int, input().split())
+    l.append(a)
+    l.append(b)
+    l.append(c)
+    l.sort()
+    print(l[0] * l[1] // 2)'''
+
+''' OJ 16
+T = int(input())
+for i in range(T):
+    num = int(input())
+    for j in range(1, 2 * num):
+        if j > 5:
+            for k in range(2 * num - j):
+                print(2 * num - j, end = '')
+            print()
+        else:
+            for k in range(j):
+                print(j, end = '')
+            print()'''
+
+''' OJ 17'''
+
