@@ -311,5 +311,14 @@ for i in range(T):
                 print(j, end = '')
             print()'''
 
-''' OJ 17'''
+''' OJ 17
+n, a = map(int, input().split())
+sum = a
+string = str(a)
+for i in range(n - 1):
+    string += str(a)
+    sum += int(string)
+print(sum)'''
+
+''' OJ 18'''
 
