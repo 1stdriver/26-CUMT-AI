@@ -463,7 +463,7 @@ for i in range(l): # 正向输出
 for i in range(l-1,-1,-1):
     print(',',n[i],end = '',sep='')'''
 
-''' 例 4.2.3 # 这一题真有点难了，去b站学了一会才会
+''' 例 4.2.3 # 这一题真有点难了，第一次见，去b站学了一会才会
 n = int(input()) 
 l = [True] * (n + 1) # 索引从1开始，0作废，所以要n + 1个位置
 left = n # 剩余人数
@@ -504,4 +504,72 @@ idx = a.index(minNum) # 用index函数获得最小数的索引
 a[0], a[idx] = a[idx], a[0]
 print(*a)'''
 
-''' 例 4.2.6'''
+''' 例 4.2.6 
+n = int(input())
+l = list(map(int, input().split()))
+for i in range(n-1):
+    minidx = i
+    for j in range(i + 1,n):
+        if l[j] < l[minidx]:
+            minidx = j
+    l[i], l[minidx] = l[minidx], l[i]
+print(*l)'''
+
+''' 例 4.2.7
+n = int(input())
+l = list(map(int, input().split()))
+for i in range(n-1):
+    for j in range(n - 1 - i):
+        if l[j] > l[j+1]:
+            l[j], l[j+1] = l[j+1], l[j]
+print(*l)'''
+
+''' 例 4.2.8
+n = int(input())
+l = [True] * (n+1)
+l[1] = False
+lmt = math.sqrt(n)
+for i in range(2, int(lmt+1)):
+    if l[i] == False:
+        continue
+    for j in range(i*i, n+1, i):
+        l[j] = False
+res = 0
+for i in range(1,len(l)):
+    if l[i] == True:
+        res += 1
+        if res > 0:
+            print(f"{i} ",end = '')
+print()'''
+
+''' 例 4.3.1
+m,n = map(int, input().split())
+l = [[0] * n for i in range(m)]
+for i in range(m):
+    l[i] = list(map(int, input().split()))
+for i in range(m):
+    print(*l[i])'''
+
+''' 例 4.3.2
+n = int(input())
+l = [[0] * n for i in range(n)]
+for i in range(n):
+    l[i] = list(map(int, input().split()))
+for i in range(n):
+    for j in range(i):
+        l[i][j], l[j][i] = l[j][i], l[i][j]
+for i in range(n):
+    print(*l[i])'''
+
+''' 例 4.3.3
+n = int(input())
+l = [[1] * i for i in range(1, n + 1)] # 这里得从1开始，要不然第一行是空的
+for i in range(2, n): # 从第三行开始算
+    for j in range(1, i): # 每一行中第一个和最后一个不用修改，只要修改中间的数
+        l[i][j] = l[i-1][j] + l[i-1][j-1] 
+for i in range(n):
+    for j in range(i + 1):
+        print("%5d"%l[i][j], end = '')
+    print()'''
+
+''' 例 4.3.4'''
