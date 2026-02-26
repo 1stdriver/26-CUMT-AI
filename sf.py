@@ -940,6 +940,80 @@ while(True):
         print(minLen)
         break'''
 
-''' OJ 10'''
+''' OJ 10
+n, *a = map(int, input().split())
+res = 0
+heapVal = 0
+while(len(a) > 1):
+    a.sort()
+    heapVal = a[0] + a[1]
+    res += heapVal
+    a.append(heapVal)
+    a.pop(0)
+    a.pop(0)
+print(res)'''
+
+''' OJ 11
+T = int(input())
+for _ in range(T):
+    s1 = input().strip()
+    s2 = list(''.join(s1))
+    s3 = list(''.join(s1))
+    s2.reverse()
+    if s3 == s2:
+        print("YES")
+    else:
+        print("NO")'''
+
+''' OJ 12
+T = int(input())
+for _ in range(T):
+    n = int(input())
+    a = input().strip().split()
+    res = 0
+    for i in range(len(a)):
+        if len(a[i]) == n:
+            res += 1
+    print(res)'''
+
+''' OJ 13
+T = int(input())
+for _ in range(T):
+    n, *a = map(int, input().split())
+    a = list(set(a))
+    print(*a)'''
+
+''' OJ 14
+T = int(input())
+for _ in range(T):
+    a = input().split()
+    for i in range(len(a)):
+        a[i] = a[i].lower()
+        if len(a[i]) > 4:
+            a[i] = a[i][:4]
+            a[i] += '.'
+    print(*a)'''
+
+''' OJ 15
+N = int(input())
+a = []
+for i in range(N):
+    s = input()
+    if s == '0':
+        break
+    a.append(s)
+for i in range(N - 1):
+    idx = i
+    for j in range(i + 1, N):
+        if len(a[j]) < len(a[idx]):
+            idx = j
+        elif len(a[j]) == len(a[idx]):
+            if int(a[j]) < int(a[idx]):
+                idx = j
+    a[i], a[idx] = a[idx], a[i]
+for i in range(N):
+    print(a[i])'''
+
+''' OJ 16'''
 
 
